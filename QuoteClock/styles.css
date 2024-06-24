@@ -1,0 +1,105 @@
+body {
+    width: 350px;
+    height: 650px;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E3135; /* よりダークな背景色 */
+    color: #FFFFFF; /* 白いテキスト */
+    font-family: 'Arial', sans-serif;
+}
+
+.outer-octagon {
+    width: 240px;
+    height: 240px;
+    background-color: #3A3F44; /* よりモダンなグレー */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    clip-path: polygon(
+        30% 0%,       /* 上左 */
+        70% 0%,       /* 上右 */
+        100% 30%,     /* 右上 */
+        100% 70%,     /* 右下 */
+        70% 100%,     /* 下右 */
+        30% 100%,     /* 下左 */
+        0% 70%,       /* 左下 */
+        0% 30%        /* 左上 */
+    );
+}
+
+.clock {
+    width: 220px;
+    height: 220px;
+    background-color: #2E3135; /* 背景と同じ色で統一感を出す */
+    position: relative;
+    clip-path: polygon(
+        30% 0%,       /* 上左 */
+        70% 0%,       /* 上右 */
+        100% 30%,     /* 右上 */
+        100% 70%,     /* 右下 */
+        70% 100%,     /* 下右 */
+        30% 100%,     /* 下左 */
+        0% 70%,       /* 左下 */
+        0% 30%        /* 左上 */
+    );
+}
+
+.inner-octagon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #3A3F44;
+    clip-path: polygon(
+        30% 0%,       /* 上左 */
+        70% 0%,       /* 上右 */
+        100% 30%,     /* 右上 */
+        100% 70%,     /* 右下 */
+        70% 100%,     /* 下右 */
+        30% 100%,     /* 下左 */
+        0% 70%,       /* 左下 */
+        0% 30%        /* 左上 */
+    );
+    transform: translate(-50%, -50%);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    z-index: 1;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 50px;
+    background: #E94E77; /* アクセントカラー */
+}
+
+.minute-hand {
+    width: 4px;
+    height: 70px;
+    background: #E94E77; /* アクセントカラー */
+}
+
+#quote {
+    font-size: 16px;
+    text-align: center;
+    border-top: 1px solid #E94E77; /* アクセントカラー */
+    padding-top: 20px;
+    margin-top: 20px; /* 間隔を追加 */
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
